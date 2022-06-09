@@ -1,0 +1,152 @@
+{
+	// Useful Python snippets mainly for Machine learning, Neural networks and image processing.
+	// By: Gholamreza Dar June 2022
+
+	// Place your snippets for python here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	// General Datascience and Machine learning snippets
+	"import np, pd, plt, sns, os, datetime":{
+		"prefix": "import_np_ghd_ml",
+		"body": [
+			"import numpy as np",
+			"import pandas as pd",
+			"",
+			"import matplotlib.pyplot as plt",
+			"import seaborn as sns; sns.set(); sns.set_style('dark')",
+			"",
+			"import os",
+			"import datetime",
+			"",
+			"$0"
+		],
+		"description": "import useful data science modules"
+	},
+
+	"import tf, np, pd, plt, sns, os, datetime":{
+		"prefix": "import_tf_ghd_ml",
+		"body": [
+			"import numpy as np",
+			"import pandas as pd",
+			"",
+			"import matplotlib.pyplot as plt",
+			"import seaborn as sns; sns.set(); sns.set_style('dark')",
+			"",
+			"import os",
+			"import datetime",
+			"",
+			"from sklearn.model_selection import train_test_split",
+			"import tensorflow as tf",
+		],
+		"description": "import useful NN modules"
+	},
+
+	"timestamp":{
+		"prefix": "timestamp_ghd_ml",
+		"body": [
+			"# Current timestamp",
+			"timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')"
+		],
+		"description": "current timestamp as a variable. useful for naming files and etc"
+	},
+
+	"timestamp_raw":{
+		"prefix": "timestamp_raw_ghd_ml",
+		"body": [
+			"datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')"
+		],
+		"description": "return current timestamp in-place. useful for naming files and etc."
+	},
+
+	// Neural Networks and deep learning snippets
+	"tensorboard callback":{
+		"prefix": "tensorboad_callback_ghd_nn",
+		"body": [
+				"# Current timestamp",
+				"timestamp = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')",
+				"# Tensorboard callback",
+				"tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=f'logs/$0{timestamp}')"
+			],
+		"description": "generate a tensorboard callback with the current timestamp as the log directory"
+	},
+
+	"tensorboard start":{
+		"prefix": "tensorboard_start_ghd_nn",
+		"body": [
+				"%load_ext tensorboard",
+				"%tensorboard --logdir logs/",
+			],
+		"description": "load tensorboard extension and launch tensorboard on 'logs/' directory",
+	},
+
+	// Image Processing snippets
+	"opencv utils":{
+		"prefix": "opencv_utils_ghd_cv",
+		"body": [
+				"def rgb(img):",
+				"    return cv2.cvtColor(img, cv2.COLOR_BGR2RGB)",
+				"",
+				"def bgr(img):",
+				"    return cv2.cvtColor(img, cv2.COLOR_RGB2BGR)",
+				"",
+				"def gray(img):",
+				"    return cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)",
+				"",
+				"def disp(img, title='', s=8, vmin=None, vmax=None):",
+				"    plt.figure(figsize=(s,s))",
+				"    plt.axis('off')",
+				"    if vmin is not None and vmax is not None:",
+				"        plt.imshow(img, cmap='gray', vmin=vmin, vmax=vmax)",
+				"    else:",
+				"        plt.imshow(img, cmap='gray')",
+				"    plt.title(title)",
+				"    plt.show()",
+			],
+		"description": "Many useful opencv utilities for converting colorspaces and quickly displaying images."
+	},
+
+	"fourier_analysis":{
+		"prefix": "fourier_analysis_ghd_cv",
+		"body": [
+				"def fourier_analysis(img):",
+				"    fourier_img = cv2.dft(img.astype(np.float32), flags=cv2.DFT_COMPLEX_OUTPUT)",
+				"    fourier_img_shift = np.fft.fftshift(fourier_img)",
+				"    real = fourier_img_shift[:,:,0]",
+				"    imag = fourier_img_shift[:,:,1]",
+				"    magnitude = cv2.magnitude(real, imag)",
+				"    phase = cv2.phase(real, imag)",
+				"    return magnitude, phase",
+			
+			],
+		"description": "A function for applying Fourier Transform to and image."
+	},
+
+	"fourier_filter":{
+		"prefix": "fourier_analysis_ghd_cv",
+		"body": [
+				"def apply_fourier_filter(img, mask):",
+				"    mask = mask[:, :, np.newaxis]",
+				"    img_fourier = cv2.dft(img.astype(np.float32), flags=cv2.DFT_COMPLEX_OUTPUT)",
+				"    img_fourier_shift = np.fft.fftshift(img_fourier)",
+				"    img_fourier_shift *= mask",
+				"    img_fourier_shift_back = np.fft.ifftshift(img_fourier_shift)",
+				"    img_fourier_inverse = cv2.idft(img_fourier_shift_back, flags=cv2.DFT_SCALE)",
+				"",
+				"    return img_fourier_inverse",
+			
+			],
+		"description": "A function for filtering an image using Fourier Transform."
+	}
+
+}
