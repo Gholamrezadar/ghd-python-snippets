@@ -31,11 +31,29 @@
 			"",
 			"$0"
 		],
-		"description": "import useful data science modules"
+		"description": "Imports np, pd, plt, sns, os, datetime"
 	},
 
-	"import tf, np, pd, plt, sns, os, datetime":{
-		"prefix": "import_tf_ghd_ml",
+	"timestamp":{
+		"prefix": "timestamp_ghd_ml",
+		"body": [
+			"# Current timestamp",
+			"timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')"
+		],
+		"description": "Current timestamp as a variable. useful for naming files and etc"
+	},
+
+	"timestamp_raw":{
+		"prefix": "timestamp_raw_ghd_ml",
+		"body": [
+			"datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')"
+		],
+		"description": "Returns current timestamp in-place. useful for naming files and etc."
+	},
+
+	// Neural Networks and Deep Learning snippets
+    "import tf, np, pd, plt, sns, os, datetime":{
+		"prefix": "import_tf_ghd_nn",
 		"body": [
 			"import numpy as np",
 			"import pandas as pd",
@@ -49,27 +67,9 @@
 			"from sklearn.model_selection import train_test_split",
 			"import tensorflow as tf",
 		],
-		"description": "import useful NN modules"
+		"description": "Imports tf, np, pd, plt, sns, os, datetime"
 	},
 
-	"timestamp":{
-		"prefix": "timestamp_ghd_ml",
-		"body": [
-			"# Current timestamp",
-			"timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')"
-		],
-		"description": "current timestamp as a variable. useful for naming files and etc"
-	},
-
-	"timestamp_raw":{
-		"prefix": "timestamp_raw_ghd_ml",
-		"body": [
-			"datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')"
-		],
-		"description": "return current timestamp in-place. useful for naming files and etc."
-	},
-
-	// Neural Networks and deep learning snippets
 	"tensorboard callback":{
 		"prefix": "tensorboad_callback_ghd_nn",
 		"body": [
@@ -78,7 +78,7 @@
 				"# Tensorboard callback",
 				"tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=f'logs/$0{timestamp}')"
 			],
-		"description": "generate a tensorboard callback with the current timestamp as the log directory"
+		"description": "Generates a tensorboard callback with the current timestamp as the log directory"
 	},
 
 	"tensorboard start":{
@@ -87,7 +87,7 @@
 				"%load_ext tensorboard",
 				"%tensorboard --logdir logs/",
 			],
-		"description": "load tensorboard extension and launch tensorboard on 'logs/' directory",
+		"description": "Loads tensorboard extension and launch tensorboard on 'logs/' directory",
 	},
 
 	// Image Processing snippets
@@ -133,7 +133,7 @@
 	},
 
 	"fourier_filter":{
-		"prefix": "fourier_analysis_ghd_cv",
+		"prefix": "fourier_filter_ghd_cv",
 		"body": [
 				"def apply_fourier_filter(img, mask):",
 				"    mask = mask[:, :, np.newaxis]",

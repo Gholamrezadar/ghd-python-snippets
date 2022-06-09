@@ -1,35 +1,37 @@
-# ghd-python-snippets README
+# GHD Python Snippets
 
-This is the README for your extension "ghd-python-snippets". After writing up a brief description, we recommend including the following sections.
+A series of useful Python snippets with focus on Machine Learning, Neural Networks, Image Processing, and Data Science.
 
-## Features
+## Snippets
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+  - [Machine Learning](#machine-learning)
+  - [Neural Networks](#neural-networks)
+  - [Image Processing](#image-processing)
 
-For example if there is an image subfolder under your extension project workspace:
+### Machine Learning
 
-\!\[feature X\]\(images/feature-x.png\)
+- **import_np_ghd_ml**: *Imports `np`, `pd`, `plt`, `sns`, `os`, `datetime`*
+- **timestamp_ghd_ml**: *Current timestamp as a variable. useful for naming files and etc*
+- **timestamp_raw_ghd_ml**: *Returns current timestamp in-place. useful for naming files and etc*
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+### Neural Networks
+
+- **import_tf_ghd_nn**: *Imports `tf`, `np`, `pd`, `plt`, `sns`, `os`, `datetime`*
+- **tensorboad_callback_ghd_nn**: *Generates a tensorboard callback with the current timestamp as the `log` directory*
+- **tensorboard_start_ghd_nn**: *Loads tensorboard extension and launch tensorboard on `logs/` directory*
+
+### Image Processing
+
+- **opencv_utils_ghd_cv**: *Many small utility functions for OpenCV*
+- **fourier_analysis_ghd_cv**: *Fourier analysis of an image*
+- **fourier_filter_ghd_cv**: *Filter the Fourier spectrum of an image and return the filtered image*
+
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+Depending on what snippets you want to use, you may need to install additional modules.
 
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+-------------------------------------------------
 
 ## Release Notes
 
@@ -37,29 +39,4 @@ Users appreciate release notes as you update your extension.
 
 ### 1.0.0
 
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Initial release of the extension.
