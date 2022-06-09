@@ -26,7 +26,6 @@ A series of useful Python snippets with focus on Machine Learning, Neural Networ
 - **fourier_analysis_ghd_cv**: *Fourier analysis of an image*
 - **fourier_filter_ghd_cv**: *Filter the Fourier spectrum of an image and return the filtered image*
 
-
 ## Requirements
 
 Depending on what snippets you want to use, you may need to install additional modules.
