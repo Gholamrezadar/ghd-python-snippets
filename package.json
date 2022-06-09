@@ -4,7 +4,7 @@
     "description": "A series of useful python snippets used for Machine Learning, Neural Networks, Image Processing and ...",
     "version": "1.0.0",
     "publisher": "GHD",
-    "icon": "images/icon.jpg",
+    "icon": "images/logo.jpg",
     "engines": {
         "vscode": "^1.67.0"
     },
